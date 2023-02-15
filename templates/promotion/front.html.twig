@@ -1,0 +1,60 @@
+{% extends 'basefront.html.twig' %}
+ {%  block content %}
+
+<div id="mehich mteiain-content">
+          
+            <div class="container-fluid">
+                <div class="block-header py-lg-4 py-3">
+                    <div class="row g-3">
+                            <div class="col-md-6 col-sm-12">
+                                <h2 class="m-0 fs-5"><a href="javascript:void(0);" class="btn btn-sm btn-link ps-0 btn-toggle-fullwidth">
+                                <i class="fa fa-arrow-left"></i></a> Afficher Une promotion</h2>
+                          
+                        </div>
+                     
+                    </div>
+                </div>
+                
+                <div class="card" style="    margin-left: 313px;margin-right: 11px;">
+                    <div class="card-body">
+                        <div class="row g-3">
+
+<div class="row">
+ <div class="section clear"> 
+                            
+    <table class="table table-striped" >
+    <thead>
+    <tr>
+    <th>image </th>
+    <th>produit id</th>
+    <th>pourcentage</th>
+    <th>Start Date</th>
+    <th>end Date</th>
+     
+    
+       
+
+    </tr>
+    </thead>
+    <tbody>
+    {% for p in promotions %}
+    <tr>
+    <td><div id="list-type" class="proerty-th">
+                                <div class="col-sm-6 col-md-4 p0">
+                                    <div class="box-two proerty-item">
+                                        <div class="item-thumb">
+                                            <a href="property-1.html" ><img src="assets/img/demo/property-3.jpg"></a>
+                                        </div>
+                                        <div class="item-entry overflow"></td>
+    <td>{{p.getProduitId()}}</td>
+    <td>{{p.pourcentage}}</td>
+    <td>{{p.getStartDate()|date}}</td>
+    <td>{{p.getEndDate()|date}}</td>
+    
+    
+    {% endfor %}
+    </tbody>
+    </table>
+    </div>
+        </div>
+{% endblock %}

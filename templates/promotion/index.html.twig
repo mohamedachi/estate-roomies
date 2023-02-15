@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+ {%  block content %}
+
+<div id="mehich mteiain-content">
+          
+            <div class="container-fluid">
+
+                <div class="block-header py-lg-4 py-3">
+                    <div class="row g-3">
+                        <div class="col-md-6 col-sm-12">
+                            <h2 class="m-0 fs-5"><a href="javascript:void(0);" class="btn btn-sm btn-link ps-0 btn-toggle-fullwidth"><i class="fa fa-arrow-left"></i></a> Ajouter Une Annonce</h2>
+                          
+                        </div>
+                     
+                    </div>
+                </div>
+                
+                <div class="card" style="    margin-left: 313px;margin-right: 11px;">
+                    <div class="card-body">
+                        <div class="row g-3">
+                        
+<div class="row">
+    <table class="table table-striped" >
+    <thead>
+    <tr>
+    <th>Id</th>
+    <th>pourcentage</th>
+    <th>Start Date</th>
+    <th>end Date</th>
+    
+       
+
+    </tr>
+    </thead>
+    <tbody>
+    {% for p in promotions %}
+    <tr>
+    <td>{{p.id}}</td>
+    <td>{{p.pourcentage}}</td>
+    <td>{{p.getStartDate()|date}}</td>
+    <td>{{p.getEndDate()|date}}</td>
+    <td><a href="{{path('promotion_remove',{'id':p.id})}}">delete promotion</a></td>
+     <td><a href="{{path('promotion_update',{'id':p.id})}}">update promotion</a></td>
+    </tr>
+    {% endfor %}
+    </tbody>
+    </table>
+    </div>
+        </div>
+{% endblock %}
